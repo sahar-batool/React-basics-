@@ -41,4 +41,34 @@ return(
 }
 
 export default App;
+
+export function Clock(){
+const[time, setTime] = useState(new Date().toLocaleTimeString())
+const[show, setShow] = useState(false)
+
+useEffect(()=>{
+if(!show)
+  return;
+
+let intervalId = setInterval(()=>{
+  setTime(new Date().toLocaleTimeString())
+  console.log("time")
+},1000)
+
+return()=>{
+  clearInterval(intervalId)
+  }
+
+},[show])
+
+
+  return(
+    <>
+    <button onClick={()=>setShow(!show)}>{show? 'hide time':'show current time'}</button>
+    {
+      show&&<h1>Current time: {time}</h1>
+    }
+    </>
+  )
+}
  
