@@ -6,7 +6,7 @@ function App() {
   const [number, setNumber] = useState(1000)
 
 console.log("app render")
-
+const obj = 
   return (
     <>
     <h1>Counter : {count}</h1>
@@ -15,6 +15,7 @@ console.log("app render")
     <h2>your current number {number}</h2>
         <p>increase : {number}</p>
     <Sum number={number}></Sum>
+
     </>
   )
 }

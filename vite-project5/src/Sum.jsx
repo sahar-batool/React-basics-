@@ -3,7 +3,7 @@ function Sum(){
 //react memo compare props
 //react memo skip child re-render
 //child re-render when props change otherwise not
-    const Sum = React.memo(({number})=>{
+    // const Sum = React.memo(({number})=>{
     function calculateSum(){
 
         let sum = 0;
@@ -14,15 +14,16 @@ function Sum(){
     }
     const total = calculateSum()
     console.log(total)
-
+    
     return(
         <>
         <h1>This is our math library</h1>
         <h2>sum : {total}</h2>
+        <button value={total} onClick={calculateSum}>total</button>
         
         </>
     )
-    })
+    // })
     console.log(Sum)
 }
 
